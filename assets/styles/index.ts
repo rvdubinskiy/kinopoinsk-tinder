@@ -1,10 +1,10 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-export const PRIMARY_COLOR = "#7444C0";
+export const PRIMARY_COLOR = "#FF6600";
 export const SECONDARY_COLOR = "#5636B8";
 export const WHITE = "#FFFFFF";
 export const GRAY = "#757E90";
-export const DARK_GRAY = "#363636";
+export const DARK_GRAY = "#828282";
 export const BLACK = "#000000";
 
 export const ONLINE_STATUS = "#46A575";
@@ -22,7 +22,7 @@ export default StyleSheet.create({
   // COMPONENT - CARD ITEM
   containerCardItem: {
     backgroundColor: WHITE,
-    borderRadius: 8,
+    borderRadius: 20,
     alignItems: "center",
     margin: 10,
     elevation: 1,
@@ -32,7 +32,7 @@ export default StyleSheet.create({
     shadowOffset: { height: 0, width: 0 },
   },
   matchesCardItem: {
-    marginTop: -35,
+    // marginTop: -35,
     backgroundColor: PRIMARY_COLOR,
     paddingVertical: 7,
     paddingHorizontal: 20,
@@ -219,11 +219,13 @@ export default StyleSheet.create({
   bg: {
     flex: 1,
     resizeMode: "cover",
+    backgroundColor: 'black',
     width: DIMENSION_WIDTH,
     height: DIMENSION_HEIGHT,
   },
   top: {
-    paddingTop: 50,
+    paddingTop: 70,
+    paddingBottom: 30,
     marginHorizontal: 10,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -234,6 +236,10 @@ export default StyleSheet.create({
   // CONTAINER - HOME
   containerHome: {
     marginHorizontal: 10,
+  },
+  logo:{
+    width: 143,
+    height: 20
   },
 
   // CONTAINER - MATCHES
@@ -294,7 +300,6 @@ export default StyleSheet.create({
 
   // MENU
   tabButtonText: {
-    textTransform: "uppercase",
   },
   iconMenu: {
     alignItems: "center",

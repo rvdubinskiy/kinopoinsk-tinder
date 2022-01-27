@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Image, Dimensions, TouchableOpacity } from "react-native";
+import {Text, View, Image, Dimensions, TouchableOpacity, ImageBackground} from "react-native";
 import Icon from "./Icon";
 import { CardItemT } from "../types";
 import styles, {
@@ -21,13 +21,18 @@ const CardItem = ({
 }: CardItemT) => {
   // Custom styling
   const fullWidth = Dimensions.get("window").width;
+  const screenHeight = Dimensions.get("window").height;
 
   const imageStyle = [
     {
-      borderRadius: 8,
-      width: hasVariant ? fullWidth / 2 - 30 : fullWidth - 80,
-      height: hasVariant ? 170 : 350,
-      margin: hasVariant ? 0 : 20,
+      borderRadius: 20,
+      width: '100%',
+      height: screenHeight - 250,
+      flex: 1,
+      overflow: 'hidden',
+      // width: hasVariant ? fullWidth / 2 - 30 : fullWidth - 80,
+      // height: hasVariant ? 170 : 350,
+      // margin: hasVariant ? 0 : 20,
     },
   ];
 
@@ -35,7 +40,8 @@ const CardItem = ({
     {
       paddingTop: hasVariant ? 10 : 15,
       paddingBottom: hasVariant ? 5 : 7,
-      color: "#363636",
+      color: "#ffffff",
+      fontWeight: "bold",
       fontSize: hasVariant ? 15 : 30,
     },
   ];
@@ -43,19 +49,26 @@ const CardItem = ({
   return (
     <View style={styles.containerCardItem}>
       {/* IMAGE */}
-      <Image source={image} style={imageStyle} />
+      <ImageBackground source={image} style={imageStyle} >
 
-      {/* MATCHES */}
-      {matches && (
-        <View style={styles.matchesCardItem}>
-          <Text style={styles.matchesTextCardItem}>
-            <Icon name="heart" color={WHITE} size={13} /> {matches}% Match!
-          </Text>
-        </View>
-      )}
+        <View style={{flex: 1,
+          backgroundColor: 'rgba(0,0,0, 0.35)',
+          padding: 20,
+          justifyContent: "flex-end"
+        }}>
+          <View style={{width: fullWidth - 80, alignItems: "center"}}>
 
       {/* NAME */}
       <Text style={nameStyle}>{name}</Text>
+
+     {/* MATCHES */}
+       {matches && (
+           <View style={styles.matchesCardItem}>
+           <Text style={styles.matchesTextCardItem}>
+              <Icon name="heart" color={WHITE} size={13} /> Этот фильм подходит вам на {matches}%
+           </Text>
+         </View>
+     )}
 
       {/* DESCRIPTION */}
       {description && (
@@ -92,6 +105,9 @@ const CardItem = ({
           </TouchableOpacity>
         </View>
       )}
+          </View>
+        </View>
+      </ImageBackground>
     </View>
   );
 };
