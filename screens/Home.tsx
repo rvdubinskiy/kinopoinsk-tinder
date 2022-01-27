@@ -32,6 +32,11 @@ const Home = () => {
                 name={item.name}
                 description={item.description}
                 matches={item.match}
+                onSwipeLeft={() => {
+                  console.log('left');
+                  swiper?.swipeLeft();
+                }}
+                onSwipeRight={() => swiper?.swipeRight()}
               />
             </Card>
           ))}
