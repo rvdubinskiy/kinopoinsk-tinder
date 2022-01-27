@@ -21,7 +21,7 @@ export const DIMENSION_HEIGHT = Dimensions.get("window").height;
 export default StyleSheet.create({
   // COMPONENT - CARD ITEM
   containerCardItem: {
-    backgroundColor: WHITE,
+    backgroundColor: 'black',
     borderRadius: 20,
     alignItems: "center",
     margin: 10,
@@ -32,10 +32,13 @@ export default StyleSheet.create({
     shadowOffset: { height: 0, width: 0 },
   },
   matchesCardItem: {
-    // marginTop: -35,
-    backgroundColor: 'rgba(0,0,0, 0.5)',
+    position: 'absolute',
+    top: 0,
+    right: 15,
+    marginTop: 15,
+    backgroundColor: 'rgba(0,0,0, 0.6)',
     paddingVertical: 7,
-    paddingRight: 20,
+    paddingRight: 10,
     paddingLeft: 10,
     borderRadius: 20,
     justifyContent: 'center',
@@ -49,7 +52,6 @@ export default StyleSheet.create({
   descriptionCardItem: {
     color: 'white',
     textAlign: "center",
-    marginTop: 20,
     fontSize: 16
   },
   status: {
@@ -78,14 +80,14 @@ export default StyleSheet.create({
   actionsCardItem: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 30,
+    paddingVertical: 15,
   },
   button: {
-    width: 82,
-    height: 82,
+    width: 72,
+    height: 72,
     borderRadius: 41,
-    backgroundColor: BLACK,
-    marginHorizontal: 7,
+    backgroundColor:"#262626",
+    marginHorizontal: 20,
     alignItems: "center",
     justifyContent: "center",
     elevation: 1,
@@ -99,7 +101,7 @@ export default StyleSheet.create({
     paddingTop: 5,
     width: '100%',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold'
   },
   buttonLike: {
@@ -243,7 +245,7 @@ export default StyleSheet.create({
   },
   top: {
     paddingTop: 70,
-    paddingBottom: 30,
+    paddingBottom: 10,
     marginHorizontal: 10,
     flexDirection: "column",
     justifyContent: "space-between",

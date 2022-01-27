@@ -1,31 +1,33 @@
 import { DataT } from "../../types";
-import IMAGE_01 from "../images/01.jpg";
-import IMAGE_02 from "../images/02.jpg";
-import IMAGE_03 from "../images/03.jpg";
-import IMAGE_04 from "../images/04.jpg";
-import IMAGE_05 from "../images/05.jpg";
-import IMAGE_06 from "../images/06.jpg";
-import IMAGE_07 from "../images/07.jpg";
-import IMAGE_08 from "../images/08.jpg";
-import IMAGE_09 from "../images/09.jpg";
-import IMAGE_10 from "../images/10.jpg";
+
+import IMAGE_01 from "../converted/1.jpg";
+import IMAGE_02 from "../converted/2.jpg";
+import IMAGE_03 from "../converted/3.jpg";
+import IMAGE_04 from "../converted/4.jpg";
+import IMAGE_05 from "../converted/5.jpg";
+import IMAGE_06 from "../converted/6.jpg";
+import IMAGE_07 from "../converted/7.jpg";
+import IMAGE_08 from "../converted/8.jpg";
+import IMAGE_09 from "../converted/9.jpg";
+import IMAGE_10 from "../converted/10.jpg";
+
 
 const data: DataT[] = [
   {
     id: 1,
-    name: "Leanne Graham",
+    name: "Форрест Гамп",
     isOnline: true,
-    match: "78",
+    match: "7",
     description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
+      "Полувековая история США глазами чудака из Алабамы. Абсолютная классика Роберта Земекиса с Томом Хэнксом",
     message:
       "I will go back to Gotham and I will fight men Iike this but I will not become an executioner.",
     image: IMAGE_01,
   },
   {
     id: 2,
-    name: "Clementine Bauch",
-    match: "93",
+    name: "300 спартанцев",
+    match: "7",
     description:
       "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
     isOnline: false,
@@ -35,7 +37,7 @@ const data: DataT[] = [
   {
     id: 3,
     name: "Ervin Howell",
-    match: "45",
+    match: "7",
     description:
       "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
     isOnline: false,
@@ -46,7 +48,7 @@ const data: DataT[] = [
   {
     id: 4,
     name: "John Lebsack",
-    match: "88",
+    match: "8",
     description:
       "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
     isOnline: true,
@@ -56,7 +58,7 @@ const data: DataT[] = [
   {
     id: 5,
     name: "James Dietrich",
-    match: "76",
+    match: "7",
     description:
       "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
     isOnline: false,
@@ -66,7 +68,7 @@ const data: DataT[] = [
   {
     id: 6,
     name: "Patricia Schulist",
-    match: "95",
+    match: "9",
     description:
       "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
     isOnline: true,
@@ -77,7 +79,7 @@ const data: DataT[] = [
   {
     id: 7,
     name: "Chelsey Weissnat",
-    match: "67",
+    match: "6",
     description:
       "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
     isOnline: true,
@@ -88,7 +90,7 @@ const data: DataT[] = [
   {
     id: 8,
     name: "Nicky Runol",
-    match: "85",
+    match: "8",
     description:
       "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
     age: "27",
@@ -105,7 +107,7 @@ const data: DataT[] = [
   {
     id: 9,
     name: "Glenna Reichert",
-    match: "74",
+    match: "7",
     description:
       "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
     isOnline: true,
@@ -116,7 +118,7 @@ const data: DataT[] = [
   {
     id: 10,
     name: "Kurtis DuBuque",
-    match: "98",
+    match: "9",
     description:
       "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
     isOnline: false,
