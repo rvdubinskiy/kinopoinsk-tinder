@@ -74,10 +74,10 @@ export default StyleSheet.create({
     paddingVertical: 30,
   },
   button: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    backgroundColor: WHITE,
+    width: 82,
+    height: 82,
+    borderRadius: 41,
+    backgroundColor: BLACK,
     marginHorizontal: 7,
     alignItems: "center",
     justifyContent: "center",
@@ -86,6 +86,9 @@ export default StyleSheet.create({
     shadowRadius: 20,
     shadowColor: DARK_GRAY,
     shadowOffset: { height: 10, width: 0 },
+  },
+  buttonLike: {
+    backgroundColor: PRIMARY_COLOR,
   },
   miniButton: {
     width: 40,
