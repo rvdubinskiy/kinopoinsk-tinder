@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {View, ImageBackground, Image} from "react-native";
+import {View, ImageBackground, Image, Text} from "react-native";
 import CardStack, { Card } from "react-native-card-stack-swiper";
 import { City, Filters, CardItem } from "../components";
 import styles from "../assets/styles";
@@ -15,7 +15,11 @@ const Home = () => {
     >
       <View style={styles.containerHome}>
         <View style={styles.top}>
-          <Image source={require("../assets/kp-logo.png")} style={styles.logo}/>
+          <Text style={styles.mainTitle}>
+            Какое у вас настроение?
+          </Text>
+          {/*<Text style={{color: 'grey', fontSize: 16, marginTop: 10}}>Это фильмы, которые вы уже смотрели</Text>*/}
+          {/*<Image source={require("../assets/kp-logo.png")} style={styles.logo}/>*/}
         </View>
 
         <CardStack

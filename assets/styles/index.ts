@@ -33,17 +33,24 @@ export default StyleSheet.create({
   },
   matchesCardItem: {
     // marginTop: -35,
-    backgroundColor: PRIMARY_COLOR,
+    backgroundColor: 'rgba(0,0,0, 0.5)',
     paddingVertical: 7,
-    paddingHorizontal: 20,
+    paddingRight: 20,
+    paddingLeft: 10,
     borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   matchesTextCardItem: {
     color: WHITE,
+    paddingLeft: 10
   },
   descriptionCardItem: {
-    color: GRAY,
+    color: 'white',
     textAlign: "center",
+    marginTop: 20,
+    fontSize: 16
   },
   status: {
     paddingBottom: 10,
@@ -85,10 +92,18 @@ export default StyleSheet.create({
     shadowOpacity: 0.15,
     shadowRadius: 20,
     shadowColor: DARK_GRAY,
-    shadowOffset: { height: 10, width: 0 },
+    shadowOffset: { height: 10, width: 0 }
+  },
+  buttonText: {
+    color: 'white',
+    paddingTop: 5,
+    width: '100%',
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold'
   },
   buttonLike: {
-    backgroundColor: PRIMARY_COLOR,
+    backgroundColor: PRIMARY_COLOR
   },
   miniButton: {
     width: 40,
@@ -230,7 +245,7 @@ export default StyleSheet.create({
     paddingTop: 70,
     paddingBottom: 30,
     marginHorizontal: 10,
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
   },
@@ -243,6 +258,14 @@ export default StyleSheet.create({
   logo:{
     width: 143,
     height: 20
+  },
+  mainTitle: {
+    color: 'white',
+    fontSize: 36,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 0,
+    width: '100%'
   },
 
   // CONTAINER - MATCHES
