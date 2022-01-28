@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, ImageBackground, Dimensions } from "react-native";
+import { View, Text, ImageBackground, Dimensions, Button } from "react-native";
 import CardStack, { Card } from "react-native-card-stack-swiper";
 import { CardItem } from "../components";
 import styles from "../assets/styles";
@@ -8,33 +8,40 @@ import FINISH_SCREEN from '../assets/images/file_screen.jpg';
 import { shuffleArray } from "../utils";
 
 const { height, width } = Dimensions.get('screen');
+const MAX_CARD_INDEX = 9;
+
+type Tab = 'startScreen' | 'main' | 'endScreen';
 
 const Home = () => {
   const [swiper, setSwiper] = useState<CardStack | null>(null);
   const [memoData] = useState(() => shuffleArray(DEMO));
 
-  const [index, setIndex] = useState(0);
+  const [tabId, setCurrentTabId] = useState<Tab>('startScreen');
   return (
     <View
       // source={require("../assets/images/bg.png")}
       style={styles.bg}
     >
-      <View style={styles.containerHome}>
-        <View style={styles.top}>
-          <Text style={styles.mainTitle}>
-            Какое у вас настроение?
-          </Text>
-          {/*<Text style={{color: 'grey', fontSize: 16, marginTop: 10}}>Это фильмы, которые вы уже смотрели</Text>*/}
-          {/*<Image source={require("../assets/kp-logo.png")} style={styles.logo}/>*/}
-        </View>
-
-        {index === 9 ? <ImageBackground source={FINISH_SCREEN} width={width} height={height} style={{ height, width }}/> : (
-
+      {tabId === 'startScreen' && <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height, width }}><View onTouchStart={() => setCurrentTabId('main')}><Text style={{ color: 'white' }}>Start</Text></View></View>}
+      {tabId === 'main' && (
+        <View style={styles.containerHome}>
+          <View style={styles.top}>
+            <Text style={styles.mainTitle}>
+              Какое у вас настроение?
+            </Text>
+            {/*<Text style={{color: 'grey', fontSize: 16, marginTop: 10}}>Это фильмы, которые вы уже смотрели</Text>*/}
+            {/*<Image source={require("../assets/kp-logo.png")} style={styles.logo}/>*/}
+          </View>
           <CardStack
             loop
             verticalSwipe={false}
             renderNoMoreCards={() => null}
-            onSwiped={setIndex}
+            onSwiped={(index: number) => {
+              if (index === MAX_CARD_INDEX) {
+                setCurrentTabId('endScreen');
+              }
+            }}
+            
             ref={(newSwiper): void => setSwiper(newSwiper)}
           >
             {memoData.map((item) => (
@@ -53,8 +60,9 @@ const Home = () => {
               </Card>
             ))}
           </CardStack>
-        )}
-      </View>
+        </View>
+      )}
+      {tabId === 'endScreen' && <ImageBackground source={FINISH_SCREEN} width={width} height={height} style={{ height, width }} />}
     </View>
   );
 };

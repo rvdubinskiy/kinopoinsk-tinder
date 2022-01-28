@@ -10,122 +10,74 @@ import IMAGE_07 from "../converted/7.jpg";
 import IMAGE_08 from "../converted/8.jpg";
 import IMAGE_09 from "../converted/9.jpg";
 import IMAGE_10 from "../converted/10.jpg";
+import IMAGE_11 from "../converted/11.jpg";
+import IMAGE_12 from "../converted/12.jpg";
+import IMAGE_13 from "../converted/13.jpg";
+import IMAGE_14 from "../converted/14.jpg";
+import IMAGE_15 from "../converted/15.jpg";
+import IMAGE_16 from "../converted/16.jpg";
+import IMAGE_17 from "../converted/17.jpg";
+import IMAGE_18 from "../converted/18.jpg";
+import IMAGE_19 from "../converted/19.jpg";
+import IMAGE_20 from "../converted/20.jpg";
+import IMAGE_21 from "../converted/21.jpg";
+import IMAGE_22 from "../converted/22.jpg";
+import IMAGE_23 from "../converted/23.jpg";
+import IMAGE_24 from "../converted/24.jpg";
+import IMAGE_25 from "../converted/25.jpg";
+import IMAGE_26 from "../converted/26.jpg";
+import IMAGE_27 from "../converted/27.jpg";
+import IMAGE_28 from "../converted/28.jpg";
+import IMAGE_29 from "../converted/29.jpg";
+import IMAGE_30 from "../converted/30.jpg";
 
+const images = [
+  IMAGE_01,
+  IMAGE_02,
+  IMAGE_03,
+  IMAGE_04,
+  IMAGE_05,
+  IMAGE_06,
+  IMAGE_07,
+  IMAGE_08,
+  IMAGE_09,
+  IMAGE_10,
+  IMAGE_11,
+  IMAGE_12,
+  IMAGE_13,
+  IMAGE_14,
+  IMAGE_15,
+  IMAGE_16,
+  IMAGE_17,
+  IMAGE_18,
+  IMAGE_19,
+  IMAGE_20,
+  IMAGE_21,
+  IMAGE_22,
+  IMAGE_23,
+  IMAGE_24,
+  IMAGE_25,
+  IMAGE_26,
+  IMAGE_27,
+  IMAGE_28,
+  IMAGE_29,
+  IMAGE_30,
+]
 
-const data: DataT[] = [
-  {
-    id: 1,
-    name: "Форрест Гамп",
-    isOnline: true,
-    match: "7",
-    description:
-      "Полувековая история США глазами чудака из Алабамы. Абсолютная классика Роберта Земекиса с Томом Хэнксом",
-    message:
-      "I will go back to Gotham and I will fight men Iike this but I will not become an executioner.",
-    image: IMAGE_01,
-  },
-  {
-    id: 2,
-    name: "300 спартанцев",
-    match: "7",
-    description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
-    isOnline: false,
-    message: "Someone like you. Someone who'll rattle the cages.",
-    image: IMAGE_02,
-  },
-  {
-    id: 3,
-    name: "Ervin Howell",
-    match: "7",
-    description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
-    isOnline: false,
-    message:
-      "Oh, hee-hee, aha. Ha, ooh, hee, ha-ha, ha-ha. And I thought my jokes were bad.",
-    image: IMAGE_03,
-  },
-  {
-    id: 4,
-    name: "John Lebsack",
-    match: "8",
-    description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
-    isOnline: true,
-    message: "Bats frighten me. It's time my enemies shared my dread.",
-    image: IMAGE_04,
-  },
-  {
-    id: 5,
-    name: "James Dietrich",
-    match: "7",
-    description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
-    isOnline: false,
-    message: "It's not who I am underneath but what I do that defines me.",
-    image: IMAGE_05,
-  },
-  {
-    id: 6,
-    name: "Patricia Schulist",
-    match: "9",
-    description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
-    isOnline: true,
-    message:
-      "You have nothing, nothing to threaten me with. Nothing to do with all your strength.",
-    image: IMAGE_06,
-  },
-  {
-    id: 7,
-    name: "Chelsey Weissnat",
-    match: "6",
-    description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
-    isOnline: true,
-    message:
-      "Never start with the head. The victim gets all fuzzy. He can't feel the next... See?",
-    image: IMAGE_07,
-  },
-  {
-    id: 8,
-    name: "Nicky Runol",
-    match: "8",
-    description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
-    age: "27",
-    location: "Irvine, CA",
-    info1: 'Straight, Single, 5"10',
-    info2: "Tea Totaller, Loves Photography & Travel",
-    info3: "Beaches, Mountain, Cafe, Movies",
-    info4: "Last seen: 23h ago",
-    isOnline: true,
-    message:
-      "And as for the television's so-called plan, Batman has no jurisdiction.",
-    image: IMAGE_08,
-  },
-  {
-    id: 9,
-    name: "Glenna Reichert",
-    match: "7",
-    description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
-    isOnline: true,
-    message:
-      "This is what happens when an unstoppable force meets an immovable object.",
-    image: IMAGE_09,
-  },
-  {
-    id: 10,
-    name: "Kurtis DuBuque",
-    match: "9",
-    description:
-      "Full-time Traveller. Globe Trotter. Occasional Photographer. Part time Singer/Dancer.",
-    isOnline: false,
-    message:
-      "You want order in Gotham. Batman must take off his mask and turn himself in.",
-    image: IMAGE_10,
-  },
-];
+function getRandomArbitrary(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+const data: DataT[] = images.map((image, index: number) => ({
+  id: index + 1,
+  name: "Форрест Гамп",
+  isOnline: true,
+  match: String(getRandomArbitrary(5, 10)),
+  description:
+    "Полувековая история США глазами чудака из Алабамы. Абсолютная классика Роберта Земекиса с Томом Хэнксом",
+  message:
+    "I will go back to Gotham and I will fight men Iike this but I will not become an executioner.",
+  image: image,
+}));
 
 export default data;
