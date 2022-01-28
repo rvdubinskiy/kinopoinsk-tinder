@@ -4,8 +4,8 @@ import CardStack, { Card } from "react-native-card-stack-swiper";
 import { CardItem } from "../components";
 import styles from "../assets/styles";
 import DEMO from "../assets/data/demo";
-import FINISH_SCREEN from '../assets/images/file_screen.jpg';
-import START_SCREEN from '../assets/images/final_screen.gif';
+import FINISH_SCREEN from '../assets/images/final_screen.gif';
+import START_SCREEN from '../assets/images/lena_screen.jpg';
 import { shuffleArray } from "../utils";
 
 const { height, width } = Dimensions.get('screen');
