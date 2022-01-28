@@ -1,10 +1,10 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-export const PRIMARY_COLOR = "#7444C0";
+export const PRIMARY_COLOR = "#FF6600";
 export const SECONDARY_COLOR = "#5636B8";
 export const WHITE = "#FFFFFF";
 export const GRAY = "#757E90";
-export const DARK_GRAY = "#363636";
+export const DARK_GRAY = "#828282";
 export const BLACK = "#000000";
 
 export const ONLINE_STATUS = "#46A575";
@@ -21,8 +21,8 @@ export const DIMENSION_HEIGHT = Dimensions.get("window").height;
 export default StyleSheet.create({
   // COMPONENT - CARD ITEM
   containerCardItem: {
-    backgroundColor: WHITE,
-    borderRadius: 8,
+    backgroundColor: 'black',
+    borderRadius: 20,
     alignItems: "center",
     margin: 10,
     elevation: 1,
@@ -32,18 +32,27 @@ export default StyleSheet.create({
     shadowOffset: { height: 0, width: 0 },
   },
   matchesCardItem: {
-    marginTop: -35,
-    backgroundColor: PRIMARY_COLOR,
+    position: 'absolute',
+    top: 0,
+    right: 15,
+    marginTop: 15,
+    backgroundColor: 'rgba(0,0,0, 0.6)',
     paddingVertical: 7,
-    paddingHorizontal: 20,
+    paddingRight: 10,
+    paddingLeft: 10,
     borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
   matchesTextCardItem: {
     color: WHITE,
+    paddingLeft: 10
   },
   descriptionCardItem: {
-    color: GRAY,
+    color: 'white',
     textAlign: "center",
+    fontSize: 16
   },
   status: {
     paddingBottom: 10,
@@ -71,21 +80,32 @@ export default StyleSheet.create({
   actionsCardItem: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 30,
+    paddingVertical: 15,
   },
   button: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    backgroundColor: WHITE,
-    marginHorizontal: 7,
+    width: 72,
+    height: 72,
+    borderRadius: 41,
+    backgroundColor:"#262626",
+    marginHorizontal: 20,
     alignItems: "center",
     justifyContent: "center",
     elevation: 1,
     shadowOpacity: 0.15,
     shadowRadius: 20,
     shadowColor: DARK_GRAY,
-    shadowOffset: { height: 10, width: 0 },
+    shadowOffset: { height: 10, width: 0 }
+  },
+  buttonText: {
+    color: 'white',
+    paddingTop: 5,
+    width: '100%',
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  buttonLike: {
+    backgroundColor: PRIMARY_COLOR
   },
   miniButton: {
     width: 40,
@@ -219,13 +239,15 @@ export default StyleSheet.create({
   bg: {
     flex: 1,
     resizeMode: "cover",
+    backgroundColor: 'black',
     width: DIMENSION_WIDTH,
     height: DIMENSION_HEIGHT,
   },
   top: {
-    paddingTop: 50,
+    paddingTop: 70,
+    paddingBottom: 10,
     marginHorizontal: 10,
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
   },
@@ -234,6 +256,18 @@ export default StyleSheet.create({
   // CONTAINER - HOME
   containerHome: {
     marginHorizontal: 10,
+  },
+  logo:{
+    width: 143,
+    height: 20
+  },
+  mainTitle: {
+    color: 'white',
+    fontSize: 36,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 0,
+    width: '100%'
   },
 
   // CONTAINER - MATCHES
@@ -294,7 +328,6 @@ export default StyleSheet.create({
 
   // MENU
   tabButtonText: {
-    textTransform: "uppercase",
   },
   iconMenu: {
     alignItems: "center",

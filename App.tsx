@@ -28,7 +28,7 @@ const App = () => (
                 paddingTop: 10,
               },
               style: {
-                backgroundColor: WHITE,
+                backgroundColor: '#1C1C1C',
                 borderTopWidth: 0,
                 marginBottom: 0,
                 shadowOpacity: 0.05,
@@ -46,7 +46,7 @@ const App = () => (
                   <TabBarIcon
                     focused={focused}
                     iconName="search"
-                    text="Explore"
+                    text="Главное"
                   />
                 ),
               }}
@@ -60,7 +60,7 @@ const App = () => (
                   <TabBarIcon
                     focused={focused}
                     iconName="heart"
-                    text="Matches"
+                    text="Медиа"
                   />
                 ),
               }}
@@ -74,7 +74,7 @@ const App = () => (
                   <TabBarIcon
                     focused={focused}
                     iconName="chatbubble"
-                    text="Chat"
+                    text="Поиск"
                   />
                 ),
               }}
@@ -88,7 +88,7 @@ const App = () => (
                   <TabBarIcon
                     focused={focused}
                     iconName="person"
-                    text="Profile"
+                    text="Профиль"
                   />
                 ),
               }}

@@ -6,6 +6,8 @@ export type CardItemT = {
   isOnline?: boolean;
   matches?: string;
   name: string;
+  onSwipeLeft?: () => void;
+  onSwipeRight?: () => void;
 };
 
 export type IconT = {
