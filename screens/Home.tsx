@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import {View, ImageBackground, Image, Text} from "react-native";
+import { View, Text, ImageBackground, Dimensions } from "react-native";
 import CardStack, { Card } from "react-native-card-stack-swiper";
-import { City, Filters, CardItem } from "../components";
+import { CardItem } from "../components";
 import styles from "../assets/styles";
 import DEMO from "../assets/data/demo";
+import FINISH_SCREEN from '../assets/images/file_screen.jpg';
+import { shuffleArray } from "../utils";
+
+const { height, width } = Dimensions.get('screen');
 
 const Home = () => {
   const [swiper, setSwiper] = useState<CardStack | null>(null);
+  const [memoData] = useState(() => shuffleArray(DEMO));
 
+  const [index, setIndex] = useState(0);
   return (
     <View
       // source={require("../assets/images/bg.png")}
@@ -22,29 +28,32 @@ const Home = () => {
           {/*<Image source={require("../assets/kp-logo.png")} style={styles.logo}/>*/}
         </View>
 
-        <CardStack
-          loop
-          verticalSwipe={false}
-          renderNoMoreCards={() => null}
-          ref={(newSwiper): void => setSwiper(newSwiper)}
-        >
-          {DEMO.map((item) => (
-            <Card key={item.id}>
-              <CardItem
-                hasActions
-                image={item.image}
-                name={item.name}
-                description={item.description}
-                matches={item.match}
-                onSwipeLeft={() => {
-                  console.log('left');
-                  swiper?.swipeLeft();
-                }}
-                onSwipeRight={() => swiper?.swipeRight()}
-              />
-            </Card>
-          ))}
-        </CardStack>
+        {index === 9 ? <ImageBackground source={FINISH_SCREEN} width={width} height={height} style={{ height, width }}/> : (
+
+          <CardStack
+            loop
+            verticalSwipe={false}
+            renderNoMoreCards={() => null}
+            onSwiped={setIndex}
+            ref={(newSwiper): void => setSwiper(newSwiper)}
+          >
+            {memoData.map((item) => (
+              <Card key={item.id}>
+                <CardItem
+                  hasActions
+                  image={item.image}
+                  name={item.name}
+                  description={item.description}
+                  matches={item.match}
+                  onSwipeLeft={() => {
+                    swiper?.swipeLeft();
+                  }}
+                  onSwipeRight={() => swiper?.swipeRight()}
+                />
+              </Card>
+            ))}
+          </CardStack>
+        )}
       </View>
     </View>
   );
