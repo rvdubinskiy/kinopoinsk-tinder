@@ -1,4 +1,6 @@
-====Quick start
+# Quick start
 
-`npm i`
-`expo start`
+```
+npm i
+expo start
+```
