@@ -5,6 +5,7 @@ import { CardItem } from "../components";
 import styles from "../assets/styles";
 import DEMO from "../assets/data/demo";
 import FINISH_SCREEN from '../assets/images/file_screen.jpg';
+import START_SCREEN from '../assets/images/lena_screen.jpg';
 import { shuffleArray } from "../utils";
 
 const { height, width } = Dimensions.get('screen');
@@ -22,7 +23,12 @@ const Home = () => {
       // source={require("../assets/images/bg.png")}
       style={styles.bg}
     >
-      {tabId === 'startScreen' && <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height, width }}><View onTouchStart={() => setCurrentTabId('main')}><Text style={{ color: 'white' }}>Start</Text></View></View>}
+      {/* {tabId === 'startScreen' && <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height, width }}><View onTouchStart={() => setCurrentTabId('main')}><Text style={{ color: 'white' }}>Start</Text></View></View>} */}
+      {tabId === 'startScreen' && (
+        <View onTouchStart={() => setCurrentTabId('main')}>
+          <ImageBackground  source={START_SCREEN} style={{ height, width, flex: 1 }} />
+        </View>
+      )}
       {tabId === 'main' && (
         <View style={styles.containerHome}>
           <View style={styles.top}>
@@ -41,7 +47,7 @@ const Home = () => {
                 setCurrentTabId('endScreen');
               }
             }}
-            
+
             ref={(newSwiper): void => setSwiper(newSwiper)}
           >
             {memoData.map((item) => (
